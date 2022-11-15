@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ppppp</title>
+    <title>KAMU NENYE?</title>
 </head>
-<body>
-    
+<body style="text-align: center;">
+    <h1>KAMU NENYE</h1>
+    <h2>Tap sebanyak2nya</h2>
+    <img src="./rar.png" width="300px" height="300px" id="img-nanya"><br>
+    <p id="clicks">Kamu bertanya sebanyak : 0</p>
+    <button onclick="nanya()" > Kamu nanya </button>
+    <button onclick="reset()" > Reset </button>
+    <!-- <button onclick=""> </button> -->
+  
 </body>
+<script>
+        let clicks = 0;
+    function nanya(){
+        const audio = new Audio("./kamu.mp3")
+        audio.play()
+        clicks++
+        document.getElementById("clicks").innerHTML = "Kamu nanya sebanyak : " + clicks
+        document.getElementById("img-nanya").src = "./nanya.png"
+        audio.addEventListener("ended", function(){
+            document.getElementById("img-nanya").src = './rar.png'
+        }).src = "./nanya.png"
+    }
+
+    function reset(){
+        clicks = 0
+        document.getElementById("clicks").innerHTML = "Kamu nanya sebanyak : " + clicks
+    }
+
+  
+</script>
 </html>
